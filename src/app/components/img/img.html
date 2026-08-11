@@ -1,0 +1,5 @@
+@if (img) {
+<img height="560" width="345" (load)="imgLoad()" (error)="imgError()" [src]="img" alt="">
+} @else {
+<img height="560" width="345" [src]="imgDefault" alt="">
+}
