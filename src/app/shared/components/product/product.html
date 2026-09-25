@@ -1,0 +1,14 @@
+@if (product.images.length > 0) {
+<a [routerLink]="['/product', product.id]">
+  <app-img [img]="product.images[0]"></app-img>
+</a>
+
+}
+<h2>${{ product.price | currency:'COP' }}</h2>
+<p>{{ product.title }}</p>
+@if (product.taxes) {
+<p>{{product.taxes | currency:'COP' }}</p>
+}
+<!-- <button (click)="onShowDetail()">Show details</button> -->
+<a [routerLink]="['.']" [queryParams]="{ product: product.id }">Show details</a>
+<button (click)="onAddToCart()">Add cart</button>

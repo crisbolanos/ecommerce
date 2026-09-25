@@ -1,0 +1,22 @@
+<div class="page-product">
+  <button (click)="goToBack()">Back</button>
+  <div class="detail">
+    @if (product()) {
+    <div class="gallery">
+      <swiper-container navigation="true" pagination="true">
+        @for (img of product()?.images; track $index) {
+        <swiper-slide>
+          <img [src]="img" alt="img">
+        </swiper-slide>
+        }
+      </swiper-container>
+    </div>
+    <div>
+      <h1>{{product()?.title}}</h1>
+      <h2>{{product()?.price | currency }}</h2>
+      <h2>{{product()?.description }}</h2>
+      <button>Add to cart</button>
+    </div>
+    }
+  </div>
+</div>
